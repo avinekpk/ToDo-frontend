@@ -1,5 +1,6 @@
 import React from "react";
 import Hometile from "../../components/HomeTile/homeTile";
+import "./home.css";
 
 const Home = () => {
   const projects = [
@@ -31,6 +32,7 @@ const Home = () => {
 
   return (
     <div className="homePage">
+      <h1>Projects</h1>
       {projects.map((item, key) => {
         return <Hometile tilename={item.title} key={item._id} />;
       })}

@@ -1,0 +1,27 @@
+.homePage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.homePage .tile {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.homePage .tile h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.homePage .tile p {
+  font-size: 14px;
+  color: #666;
+}

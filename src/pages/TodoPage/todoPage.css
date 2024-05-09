@@ -1,0 +1,54 @@
+.todoPage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.summary {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.pending,
+.completed {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.todo {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.todo p {
+  margin: 0;
+}
+
+.todo p.description {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.todo p.status {
+  font-size: 14px;
+  color: #777;
+}
+
+.todo p.completed {
+  color: green;
+}
+
+.todo p.pending {
+  color: red;
+}

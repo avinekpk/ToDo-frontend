@@ -1,5 +1,6 @@
 import React from "react";
 import Todo from "../../components/Todos/todos";
+import "./todoPage.css";
 
 const TodoPage = () => {
   const todo = {
