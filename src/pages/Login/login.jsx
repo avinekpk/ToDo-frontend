@@ -6,7 +6,7 @@ import "./login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const onLogin = async () => {
     try {
@@ -24,10 +24,8 @@ const Login = () => {
       );
       console.log("Logged in successfully:", response.data);
 
-      // Store token in local storage
       localStorage.setItem("token", response.data.token);
 
-      // Redirect to home page
       navigate("/home");
     } catch (error) {
       console.error("Error logging in:", error);
