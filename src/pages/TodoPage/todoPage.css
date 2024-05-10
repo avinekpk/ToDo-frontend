@@ -8,10 +8,9 @@
   padding: 20px;
 }
 
-.title-container {
+.button-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -20,7 +19,8 @@
   font-weight: bold;
 }
 
-.back-button {
+.back-button,
+.download-markdown-button {
   background-color: #007bff;
   color: white;
   border: none;
@@ -30,7 +30,8 @@
   transition: background-color 0.3s ease;
 }
 
-.back-button:hover {
+.back-button:hover,
+.download-markdown-button:hover {
   background-color: #0056b3;
 }
 
@@ -75,4 +76,9 @@
 
 .todo p.pending {
   color: red;
+}
+
+.scrollable {
+  max-height: 400px; /* Set the max height according to your requirement */
+  overflow-y: auto;
 }

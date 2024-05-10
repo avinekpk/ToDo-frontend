@@ -87,9 +87,17 @@ ${completedTodos}
       <div className="todo-page-container">
         {projectData ? (
           <>
-            <button className="back-button" onClick={() => navigate("/home")}>
-              Back
-            </button>
+            <div className="button-container">
+              <button className="back-button" onClick={() => navigate("/home")}>
+                Back
+              </button>
+              <button
+                onClick={generateMarkdown}
+                className="download-markdown-button"
+              >
+                Download Project Summary
+              </button>
+            </div>
             <p className="title">{projectData.title}</p>
             <p className="summary">Summary: {projectData.summary}</p>
             <div className="add-todo-container">
@@ -101,12 +109,6 @@ ${completedTodos}
               />
               <button onClick={handleAddTodo}>Add Todo</button>
             </div>
-            <button
-              onClick={generateMarkdown}
-              className="download-markdown-button"
-            >
-              Download Project Summary
-            </button>
             <div className="todos-container scrollable">
               <p className="pending">Pending</p>
               {projectData.todos.map((item) => {
