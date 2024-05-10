@@ -36,13 +36,13 @@ const Home = () => {
     <div className="homePage-box">
       <div className="homePage">
         <div className="header">
-          <h1>Projects</h1>
           <button
             className="new-project-button"
             onClick={() => navigate("/newproject")}
           >
             <AddIcon /> New Project
           </button>
+          <h1>Projects</h1>
           <button onClick={handleLogout}>Logout</button>
         </div>
         <div className="hometiles-container">
