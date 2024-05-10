@@ -1,6 +1,6 @@
 .todo-page-box {
-  width: 500px; /* Set your desired width */
-  height: 700px; /* Set your desired height */
+  width: 500px;
+  height: 700px;
   overflow: auto;
 }
 
@@ -79,6 +79,6 @@
 }
 
 .scrollable {
-  max-height: 400px; /* Set the max height according to your requirement */
+  max-height: 400px;
   overflow-y: auto;
 }

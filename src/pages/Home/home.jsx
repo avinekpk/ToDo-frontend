@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Hometile from "../../components/HomeTile/homeTile";
 import "./home.css";
@@ -7,7 +7,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -29,7 +29,7 @@ const Home = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/login"); // Use navigate to redirect to '/login'
+    navigate("/login");
   };
 
   return (
