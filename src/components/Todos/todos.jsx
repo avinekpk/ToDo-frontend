@@ -10,14 +10,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import axios from "axios";
 import "./todo.css";
 
-const Todo = ({ description, checkedValue }) => {
+const Todo = ({ description, todoId, projectId, checkedValue }) => {
   console.log("description", description);
 
   const handleCheckboxChange = async () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://localhost:5000/todo/663d2fd0df7276ab63eccf7b", // Use the correct endpoint
+        `http://localhost:5000/todo/${todoId}`, // Use the correct endpoint
         {
           description: description,
         },
@@ -29,8 +29,29 @@ const Todo = ({ description, checkedValue }) => {
         }
       );
       console.log("Todo updated successfully:", response.data);
+
+      window.location.reload();
     } catch (error) {
       console.error("Error updating todo:", error);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.delete(
+        `http://localhost:5000/todos/${todoId}/${projectId}`, // Use the correct endpoint
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("Todo deleted successfully:", response.data);
+
+      window.location.reload();
+    } catch (error) {
+      console.error("Error deleting todo:", error);
     }
   };
 
@@ -52,7 +73,7 @@ const Todo = ({ description, checkedValue }) => {
         <IconButton aria-label="edit">
           <EditIcon />
         </IconButton>
-        <IconButton aria-label="delete">
+        <IconButton aria-label="delete" onClick={handleDelete}>
           <ClearIcon />
         </IconButton>
       </div>

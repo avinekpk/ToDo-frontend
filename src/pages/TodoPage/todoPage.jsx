@@ -2,22 +2,24 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Todo from "../../components/Todos/todos";
 import "./todoPage.css";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TodoPage = () => {
+  let { id } = useParams();
+
   const [projectData, setProjectData] = useState(null);
   const [newTodo, setNewTodo] = useState(""); // State for the new todo input
+  const navigate = useNavigate();
 
   const fetchProjectData = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(
-        "http://localhost:5000/project/663b30241a37d941d18467b2",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.get(`http://localhost:5000/project/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setProjectData(response.data.project);
     } catch (error) {
       console.error("Error fetching project data:", error);
@@ -32,7 +34,7 @@ const TodoPage = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/todos/663b30241a37d941d18467b2", // Use the correct endpoint
+        `http://localhost:5000/todos/${id}`, // Use the correct endpoint
         {
           todo: newTodo,
         },
@@ -56,6 +58,14 @@ const TodoPage = () => {
     <div className="todo-page-container">
       {projectData ? (
         <>
+          <button
+            className="back-button"
+            onClick={() => {
+              navigate("/home");
+            }}
+          >
+            Back
+          </button>
           <p className="title">{projectData.title}</p>
           <p className="summary">Summary: {projectData.summary}</p>
           <div className="add-todo-container">
@@ -74,6 +84,8 @@ const TodoPage = () => {
                 return (
                   <Todo
                     description={item.description}
+                    todoId={item._id}
+                    projectId={id}
                     checkedValue={item.status}
                     key={item._id}
                   />
@@ -86,6 +98,8 @@ const TodoPage = () => {
                 return (
                   <Todo
                     description={item.description}
+                    todoId={item._id}
+                    projectId={id}
                     checkedValue={item.status}
                     key={item._id}
                   />

@@ -45,7 +45,15 @@ const Home = () => {
         <button onClick={handleLogout}>Logout</button>
       </div>
       {projects.map((item) => (
-        <Hometile tilename={item.title} key={item._id} />
+        <Hometile
+          tilename={item.title}
+          projectId={item._id}
+          key={item._id}
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/project/${item._id}`);
+          }}
+        />
       ))}
     </div>
   );
