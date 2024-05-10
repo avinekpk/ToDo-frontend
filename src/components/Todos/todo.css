@@ -1,0 +1,15 @@
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.todo-label {
+  flex: 1;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 5px;
+}
