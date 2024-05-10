@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const NewProject = () => {
   const [title, setTitle] = useState("");
   const [todos, setTodos] = useState([""]);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleAddTodo = () => {
     setTodos([...todos, ""]);
@@ -36,12 +36,10 @@ const NewProject = () => {
         }
       );
       console.log(response.data);
-      // Handle success, maybe redirect or show a success message
 
       navigate("/home");
     } catch (error) {
       console.error("Error:", error.response.data);
-      // Handle error, maybe show an error message
     }
   };
 

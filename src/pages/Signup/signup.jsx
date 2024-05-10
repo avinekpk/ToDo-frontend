@@ -26,10 +26,8 @@ const Signup = () => {
       );
       console.log("User created successfully:", response.data);
 
-      // Store token in local storage
       localStorage.setItem("token", response.data.token);
 
-      // Redirect to home page
       navigate("/home");
     } catch (error) {
       console.error("Error creating user:", error);
