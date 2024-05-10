@@ -1,0 +1,84 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.signupPage {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signupPage div {
+  margin-bottom: 15px;
+}
+
+.signupPage p {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.signupPage input[type="text"],
+.signupPage input[type="email"],
+.signupPage input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signupPage input[type="text"]:focus,
+.signupPage input[type="email"]:focus,
+.signupPage input[type="password"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.signupPage button,
+.signupPage a {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signupPage button.signup {
+  background-color: #007bff;
+}
+
+.signupPage button.signup:hover,
+.signupPage button.login:hover,
+.signupPage a:hover {
+  background-color: #0056b3;
+}
+
+.signupPage a.login {
+  text-decoration: none;
+  color: #fff;
+}
+
+.signupPage a.login:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.signupPage p.login {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: transparent;
+  color: #007bff;
+}
