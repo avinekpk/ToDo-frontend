@@ -1,16 +1,16 @@
-/* todoPage.css */
-.todoPage {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  max-height: 600px; /* Set maximum height */
-  overflow-y: auto; /* Enable vertical scrolling */
+.todo-page-box {
+  width: 500px; /* Set your desired width */
+  height: 700px; /* Set your desired height */
+  overflow: auto;
 }
 
-.title-container {
+.todo-page-container {
+  padding: 20px;
+}
+
+.button-container {
   display: flex;
-  justify-content: space-between; /* Align title and button to opposite ends */
-  align-items: center; /* Align items vertically */
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -19,18 +19,20 @@
   font-weight: bold;
 }
 
-.back-button {
-  background-color: #007bff; /* Example color */
+.back-button,
+.download-markdown-button {
+  background-color: #007bff;
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease;
 }
 
-.back-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+.back-button:hover,
+.download-markdown-button:hover {
+  background-color: #0056b3;
 }
 
 .summary {
@@ -74,4 +76,9 @@
 
 .todo p.pending {
   color: red;
+}
+
+.scrollable {
+  max-height: 400px; /* Set the max height according to your requirement */
+  overflow-y: auto;
 }

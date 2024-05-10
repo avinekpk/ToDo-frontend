@@ -1,6 +1,14 @@
+.homePage-box {
+  width: 470px; /* Set your desired width */
+  max-height: 600px; /* Set maximum height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc; /* Add border for better visual separation */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Add padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
 .homePage {
-  max-width: 800px;
-  margin: 0 auto;
   padding: 20px;
 }
 
@@ -34,4 +42,37 @@ h1 {
 
 .new-project-button .MuiSvgIcon-root {
   margin-right: 5px;
+}
+
+.hometiles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjust the gap between tiles */
+}
+
+/* Optional: Add scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hometile {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer; /* Set cursor to pointer */
+  transition: background-color 0.3s;
+}
+
+.hometile:hover {
+  background-color: #e0e0e0; /* Change background color on hover */
 }
